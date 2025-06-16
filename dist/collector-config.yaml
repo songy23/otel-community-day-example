@@ -1,0 +1,27 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+      http:
+
+exporters:
+  example:
+    sending_queue:
+      queue_size: 500
+      sizer: requests
+      batch:
+        flush_timeout: 10s
+        min_size: 10
+        max_size: 100
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [example]
+    metrics:
+      receivers: [otlp]
+      exporters: [example]
+    logs:
+      receivers: [otlp]
+      exporters: [example]

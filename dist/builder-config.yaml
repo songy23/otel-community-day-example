@@ -1,0 +1,10 @@
+dist:
+  description: Basic OTel Collector distribution for Developers
+  name: otelcol-dev
+  output_path: ./otelcol-dev
+exporters:
+  - gomod: github.com/songy23/otel-community-day-example/exporter/exampleexporter v0.0.0-20250616193856-7f747ee90b35
+processors:
+  - gomod: github.com/DataDog/datadog-agent/comp/otelcol/otlp/components/processor/infraattributesprocessor v0.66.1
+receivers:
+  - gomod: go.opentelemetry.io/collector/receiver/otlpreceiver v0.128.0
