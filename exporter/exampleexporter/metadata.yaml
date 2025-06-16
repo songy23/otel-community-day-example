@@ -1,0 +1,16 @@
+type: example
+scope_name: github.com/songy23/otel-community-day-example/exporter/exampleexporter
+
+status:
+  class: exporter
+  stability:
+    alpha: [traces, metrics, logs]
+  codeowners:
+    active: [songy23]
+
+tests:
+  config:
+  expect_consumer_error: true
+  skip_lifecycle: true
+  goleak:
+    skip: true
